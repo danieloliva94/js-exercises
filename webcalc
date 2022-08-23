@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora</title>
+        <script>
+            function operacion() {
+                var x = Number(prompt('Introduce una opción:'));
+                var w = document.getElementById('resultado');
+                switch(x) {
+                    case 1:
+                        w.innerHTML = input1 + input2;
+                        break;
+                    case 2:
+                        w.innerHTML = input1 - input2;
+                        break;
+                    case 3:
+                        w.innerHTML = input1 * input2;
+                        break;
+                    case 4:
+                        w.innerHTML = input1 / input2;
+                        break;
+                    case 5:
+                        w.innerHTML = input1 % input2;
+                        break;
+                    case 6:
+                        document.body.innerHTML = "Se ha salido";
+                        break;
+                }
+            }
+            function iniciar() {
+                input1 = Number(prompt('Introduce el primer valor:'));
+                input2 = Number(prompt('Introduce el segundo valor:'));
+
+                document.getElementById('entrada1').innerHTML = 'Primer valor ->'+ input1;
+                document.getElementById('entrada2').innerHTML = 'Segundo valor ->'+ input2;
+            }
+        </script>
+    </head>
+    <body onload="iniciar()">
+        <h1>Calculadora básica</h1>
+
+        <h2>Funcionamiento de la calculadora</h2>
+        <ul>
+            <li>Pulse 1 para sumar</li>
+            <li>Pulse 2 para restar</li>
+            <li>Pulse 3 para multiplicar</li>
+            <li>Pulse 4 para dividir</li>
+            <li>Pulse 5 para obtener el módulo</li>
+            <li>Pulse 6 para salir</li>
+        </ul>
+        <p>
+            Se realizará la operación en función del número elegido. En caso de seleccionar 6, pulsar el botón confirmar para salir, de lo contrario, se volverá al menú principal
+        </p>
+        <div id="entrada1" style="color:black;font-size:20px;"></div>
+        <div id="entrada2" style="color:black;font-size:20px;"></div>
+
+        <form style="margin:auto;text-align:center;">
+            <input type="button" value="Operacion" onclick="operacion()"/>
+        </form>
+        <div id="resultado" style="color:blueviolet;font-size:14px;margin:auto;text-align:center;">
+            Pulsa para realizar una operación
+        </div>
+    </body>
+</html>
